@@ -1075,8 +1075,10 @@
 
         function loadYongsanMembers() {
             state.participants = buildYongsanParticipants();
+            state.bracket = null; // 명단이 통째로 바뀌면 기존 대진표는 무효이므로 비웁니다.
             saveState();
             renderParticipants();
+            renderBracket();
             showToast(`용산 정구 협회 ${YONGSAN_MEMBERS.length}명 명단이 등록되었습니다.`);
         }
 
